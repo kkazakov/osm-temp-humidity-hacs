@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure OpenSenseMap",
+        "description": "Enter the Sensor Box ID from OpenSenseMap (e.g., from https://opensensemap.org/explore/YOUR_BOX_ID)",
+        "data": {
+          "sensor_id": "Sensor Box ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to OpenSenseMap API",
+      "sensor_not_found": "Sensor Box ID not found",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "This sensor box is already configured"
+    }
+  }
+}

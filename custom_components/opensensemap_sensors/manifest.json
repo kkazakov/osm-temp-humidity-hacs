@@ -1,0 +1,12 @@
+{
+  "domain": "opensensemap_sensors",
+  "name": "OpenSenseMap Sensors",
+  "documentation": "https://github.com/kkazakov/osm-temp-humidity-hacs",
+  "issue_tracker": "https://github.com/kkazakov/osm-temp-humidity-hacs/issues",
+  "codeowners": ["@kkazakov"],
+  "config_flow": true,
+  "dependencies": [],
+  "iot_class": "cloud_polling",
+  "requirements": ["aiohttp>=3.8.0"],
+  "version": "1.0.0"
+}
