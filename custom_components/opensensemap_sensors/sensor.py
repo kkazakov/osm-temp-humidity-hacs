@@ -77,12 +77,14 @@ async def async_setup_entry(
 
     entities = []
     if coordinator.data:
+        box_name = coordinator.data.get("name", "OpenSenseMap")
         for sensor_data in coordinator.data.get("sensors", []):
             entities.append(
                 OpenSenseMapSensor(
                     coordinator,
                     sensor_id,
                     sensor_data,
+                    box_name,
                 )
             )
 
@@ -128,12 +130,14 @@ class OpenSenseMapSensor(CoordinatorEntity, SensorEntity):
         coordinator: OpenSenseMapDataUpdateCoordinator,
         box_id: str,
         sensor_data: dict[str, Any],
+        box_name: str,
     ) -> None:
         super().__init__(coordinator)
         self._box_id = box_id
+        self._box_name = box_name
         self._sensor_id = sensor_data["_id"]
         self._phenomenon = sensor_data.get("title", "").lower()
-        self._attr_name = f"OpenSenseMap {sensor_data.get('title', 'Sensor')}"
+        self._attr_name = f"{box_name} {sensor_data.get('title', 'Sensor')}"
         self._attr_unique_id = f"opensensemap_sensors_{box_id}_{self._sensor_id}"
         
         sensor_config = SENSOR_TYPES.get(self._phenomenon, {})

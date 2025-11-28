@@ -7,6 +7,7 @@ A custom Home Assistant integration to display sensor data from [OpenSenseMap](h
 ## Features
 
 - Support for temperature, humidity, pressure, PM2.5, PM10, and other sensors
+- **Support for multiple sensor boxes** - add as many senseboxes as you want
 - Automatic updates every 5 minutes
 - Configuration via UI
 - Proper device classes and units of measurement
@@ -73,6 +74,17 @@ For development with auto-reload:
 3. Search for "OpenSenseMap"
 4. Enter your Sensor Box ID (found in the URL at https://opensensemap.org/explore/YOUR_BOX_ID)
 5. Click "Submit"
+
+### Adding Multiple Sensor Boxes
+
+You can add multiple OpenSenseMap sensor boxes to your Home Assistant instance:
+
+1. Repeat the configuration steps above for each sensor box
+2. Each sensor box will be added as a separate integration entry
+3. All sensors from each box will appear as separate entities
+4. Each box will have its own device in Home Assistant
+
+Example: If you have 3 sensor boxes, simply add the integration 3 times with different Box IDs.
 
 ## Finding Your Sensor Box ID
 
